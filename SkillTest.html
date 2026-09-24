@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <title>Skills Test</title>
+
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .receipt {
+            width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 45px;
+            margin-bottom: 70px;
+        }
+
+        .menu {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            line-height: 2;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 8px 20px;
+        }
+
+        #result {
+            color: blueviolet;
+            font-family: Georgia, serif;
+            font-size: 30px;
+            line-height: 2.5;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+<body>
+
+        <nav class="navbar">
+        <a href="index.html">SKU Generator</a>
+        <a href="SkillsTest.html">Receipt Generator</a>
+        </nav>
+
+    <div class="receipt">
+
+        <h1>Jolibee Fast Food Menu</h1>
+
+        <div class="menu">
+
+            <input type="checkbox" id="Item1" value="80">
+            Burger - ₱80<br>
+
+            <input type="checkbox" id="Item2" value="100">
+            Chicken with rice - ₱100<br>
+
+            <input type="checkbox" id="Item3" value="23">
+            Fries - ₱23<br>
+
+            <input type="checkbox" id="Item4" value="62">
+            Spaghetti - ₱62<br>
+
+        </div>
+
+        <br>
+
+        <button py-click="calculate_receipt">Calculate</button>
+
+        <h1>Receipt</h1>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script type="py" src="main.py"></script>
+
+</body>
+</html>
