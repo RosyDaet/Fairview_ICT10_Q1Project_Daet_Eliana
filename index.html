@@ -4,71 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
-    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <link rel="stylesheet"
+          href="https://pyscript.net/releases/2026.7.3/core.css">
+    <script type="module"
+            src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
     <title>Skills Test</title>
 
     <style>
         body {
-            background-color: white;
-            margin: 0;
-            padding: 20px;
-        }
+    margin: 0;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
 
-        .receipt {
-            width: 600px;
-            margin: auto;
-        }
+.navbar {
+    padding: 15px;
+    background: #d71920;
+}
 
-        h1 {
-            text-align: center;
-            font-family: Georgia, serif;
-            font-size: 45px;
-            margin-bottom: 70px;
-        }
+.navbar a {
+    margin-right: 20px;
+    color: white;
+}
 
-        .menu {
-            font-family: Georgia, serif;
-            font-size: 22px;
-            line-height: 2;
-        }
+.receipt {
+    width: 750px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+}
 
-        button {
-            font-size: 20px;
-            padding: 8px 20px;
-        }
+.receipt h1 {
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+}
 
-        #result {
-            color: blueviolet;
-            font-family: Georgia, serif;
-            font-size: 30px;
-            line-height: 2.5;
-            white-space: pre-line;
-        }
+.receipt h1:first-child {
+    color: white;
+    background: #d71920;
+}
+
+.menu {
+    padding: 25px;
+}
+
+.menu input {
+    margin: 10px;
+}
+
+button {
+    width: 90%;
+    margin: 20px 5%;
+    padding: 15px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    background: #d71920;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#result {
+    padding: 25px;
+}
+
     </style>
 </head>
 
 <body>
-       
-        <nav class="navbar">
+
+    <nav class="navbar">
+        <a href="SkillTest.html">Receipt Generator</a>
         <a href="index.html">SKU Generator</a>
-        <a href="SkillsTest.html">Receipt Generator</a>
-        </nav>
-    <div class="Generater">
+    </nav>
 
-        <h1>SKU Generator</h1>
+    <div class="receipt">
 
-         <label for="Category">Product Category:</label>
-        <input type="text" id="Category">
+        <h1>Jolibee Fast Food Menu</h1>
 
-        <label for="Product">Product Name:</label>
-        <input type="text" id="Product">
+        <div class="menu">
 
-        <label for="Quantity">Stock Quantity:</label>
-        <input type="number" id="Quantity">
+            <input type="checkbox" id="Item1" value="80">
+            Burger - ₱80<br>
 
-        <button py-click="Generate_SKU">Generate SKU</button>
+            <input type="checkbox" id="Item2" value="100">
+            Chicken with rice - ₱100<br>
+
+            <input type="checkbox" id="Item3" value="23">
+            Fries - ₱23<br>
+
+            <input type="checkbox" id="Item4" value="62">
+            Spaghetti - ₱62<br>
+
+        </div>
+
+        <br>
+
+        <button py-click="calculate_receipt">Calculate</button>
+
+        <h1>Receipt</h1>
+
+        <div id="result"></div>
 
     </div>
 
