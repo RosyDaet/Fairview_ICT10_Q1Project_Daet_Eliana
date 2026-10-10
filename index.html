@@ -9,105 +9,136 @@
     <script type="module"
             src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
-    <title>Skills Test</title>
+    <title>SKU Generator</title>
 
     <style>
         body {
-    margin: 0;
-    background: #f5f5f5;
-    font-family: Arial, sans-serif;
-}
+            margin: 0;
+            background: orange;
+            font-family: Arial, sans-serif;
+        }
 
-.navbar {
-    padding: 15px;
-    background: #d71920;
-}
+        .navbar {
+            padding: 15px;
+            background: #d71920;
+        }
 
-.navbar a {
-    margin-right: 20px;
-    color: white;
-}
+        .navbar a {
+            margin-right: 20px;
+            color: white;
+        }
 
-.receipt {
-    width: 750px;
-    margin: 30px auto;
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-}
+        .receipt {
+            width: 90%;
+            max-width: 750px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+        }
 
-.receipt h1 {
-    margin: 0;
-    padding: 30px;
-    text-align: center;
-}
+        .receipt h1 {
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+        }
 
-.receipt h1:first-child {
-    color: white;
-    background: #d71920;
-}
+        .receipt h1:first-child {
+            color: white;
+            background: #d71920;
+        }
 
-.menu {
-    padding: 25px;
-}
+        .menu {
+            padding: 25px;
+        }
 
-.menu input {
-    margin: 10px;
-}
+        .menu label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
 
-button {
-    width: 90%;
-    margin: 20px 5%;
-    padding: 15px;
-    border: 0;
-    border-radius: 8px;
-    color: white;
-    background: #d71920;
-    font-size: 20px;
-    font-weight: bold;
-}
+        .menu input {
+            box-sizing: border-box;
+            width: 100%;
+            margin-top: 8px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
 
-#result {
-    padding: 25px;
-}
+        button {
+            width: 90%;
+            margin: 20px 5%;
+            padding: 15px;
+            border: 0;
+            border-radius: 8px;
+            color: white;
+            background: #d71920;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
+        #Generater {
+            padding: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
     </style>
 </head>
 
 <body>
 
     <nav class="navbar">
-        <a href="SkillTest.html">Receipt Generator</a>
         <a href="index.html">SKU Generator</a>
+        <a href="SkillTest.html">Receipt Generator</a>
     </nav>
 
     <div class="receipt">
 
-        <h1>Jolibee Fast Food Menu</h1>
+        <h1>SKU Generator</h1>
 
         <div class="menu">
 
-            <input type="checkbox" id="Item1" value="80">
-            Burger - ₱80<br>
+            <label for="Category">Enter Category</label>
+            <input
+                type="text"
+                id="Category"
+                placeholder="Example: Food"
+                required
+            >
 
-            <input type="checkbox" id="Item2" value="100">
-            Chicken with rice - ₱100<br>
+            <label for="Product">Enter Product</label>
+            <input
+                type="text"
+                id="Product"
+                placeholder="Example: Burger"
+                required
+            >
 
-            <input type="checkbox" id="Item3" value="23">
-            Fries - ₱23<br>
-
-            <input type="checkbox" id="Item4" value="62">
-            Spaghetti - ₱62<br>
+            <label for="Quantity">Enter Quantity</label>
+            <input
+                type="number"
+                id="Quantity"
+                placeholder="Example: 10"
+                min="1"
+                step="1"
+                required
+            >
 
         </div>
 
-        <br>
+        <button py-click="generate_sku">
+            Generate SKU
+        </button>
 
-        <button py-click="calculate_receipt">Calculate</button>
+        <h1>Generated SKU</h1>
 
-        <h1>Receipt</h1>
-
-        <div id="result"></div>
+        <div id="Generater">
+            Your SKU will appear here.
+        </div>
 
     </div>
 
